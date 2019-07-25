@@ -7,3 +7,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
 end
+
+# production: origins 'wikitrash.herokuapp.com'
+
+# development: origins 'localhost:3001'

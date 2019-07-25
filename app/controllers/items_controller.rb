@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    raise params.inspect
     i = Item.all.find_index {|item| item.name.downcase == item_params[:name].downcase}
 
     item = Item.all[i]
@@ -28,6 +27,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :recyclable, :image, :rules, :locations, :references, :upvotes, :downvotes)
+    params.require(:item).permit(:name, :recyclable, :image, :rules, :locations, :references, :upvotes, :downvotes, :searches)
   end
 end
