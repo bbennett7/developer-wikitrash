@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def create
     item = Item.new(item_params)
-    
+
     item.save
   end
 
@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     i = Item.all.find_index {|item| item.name.downcase == item_params[:name].downcase}
 
     item = Item.all[i]
-
+    console.log(item_params)
     item.searches += 1 if item_params[:searches]
     item.upvotes += 1 if item_params[:upvotes]
     item.downvotes += 1 if item_params[:downvotes]
