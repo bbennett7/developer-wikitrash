@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    debugger
     i = Item.all.find_index {|item| item.name.downcase == item_params[:name].downcase}
 
     item = Item.all[i]
